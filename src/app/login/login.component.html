@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="content">
+    <nav>
+      <h1>Maherafzar Noandish</h1>
+    </nav>
+    <aside class="right-sidebar">
+      <div class="right-banner">
+        <img src="assets/photos/password.png" class="banner-image" />
+      </div>
+    </aside>
+    <main>
+      <div class="form-userName">
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Enter your username </mat-label>
+            <div style="margin-bottom: -30px">
+              <mat-icon style="margin-top: -2px" matPrefix></mat-icon>
+            </div>
+            <span matPrefix>
+              <mat-icon matPrefix inline="true" style="font-size: 25px"
+                >account_circle</mat-icon
+              >
+            </span>
+            <input
+              [patterns]="customPatterns"
+              [validation]="false"
+              mask="AAAAAAAAAA"
+              required
+              matInput
+              placeholder="Ex. Mahdi Taremi"
+              ngModel
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <div style="margin-bottom: -30px">
+              <mat-icon style="margin-top: -2px" matPrefix></mat-icon>
+            </div>
+            <span matPrefix>
+              <mat-icon matPrefix inline="true" style="font-size: 25px"
+                >lock</mat-icon
+              >
+            </span>
+            <input
+              matInput
+              [type]="showPasswordOnPress ? 'text' : 'password'"
+            />
+            <mat-icon
+              class="showPasswor"
+              [class.hide]="showPasswordOnPress"
+              (mousedown)="showPasswordOnPress = !showPasswordOnPress"
+              (mouseup)="showPasswordOnPress = !showPasswordOnPress"
+              >{{ hide ? "visibility_off" : "visibility" }}</mat-icon
+            >
+          </mat-form-field>
+          <!-- <input type="text" [patterns]="customPatterns" /> -->
+        </form>
+        <button mat-raised-button color="primary">submit</button>
+      </div>
+    </main>
+    <aside class="left-sidebar">
+      <div class="left-banner">
+        <img src="assets/photos/main.jpg" />
+
+        <h2>Maherafzar Noandish</h2>
+      </div>
+    </aside>
+  </div>
+</div>
