@@ -22,14 +22,18 @@
               >
             </span>
             <input
-              [patterns]="customPatterns"
-              [validation]="false"
-              mask="AAAAAAAAAA"
-              required
               matInput
+              required
+              [validation]="false"
+              [patterns]="customPatterns"
+              mask="AAAAAAAAAA"
               placeholder="Ex. Mahdi Taremi"
-              ngModel
+              #test
+              (keypress)="showError()"
+              NgModel
             />
+            <!-- (keypress)="checkUsername(test.value)" -->
+            <!-- (maskFilled)="showError()" -->
           </mat-form-field>
 
           <mat-form-field appearance="fill">

@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -16,6 +17,7 @@ import { NgxMaskModule } from 'ngx-mask';
     MaterialModule,
     FormsModule,
     NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
