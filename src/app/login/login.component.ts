@@ -13,17 +13,85 @@ export class LoginComponent implements OnInit {
 
   constructor(private toastr: ToastrService) {}
   check: boolean | undefined;
-  checkUsername(check: string) {
+  // maskFilled() {
+  //   this.toastr.error('Please set your keyboard language to English', 'Error', {
+  //     timeOut: 2000,
+  //   });
+  // }
+
+  showError(e: any) {
+    const KEY = e.keyCode;
+    const check = 65 <= KEY && KEY <= 90;
     // console.log(check);
-    // if (check.length == 0) {
-    //   console.log('check');
+
+    if (check == false) {
+      this.toastr.error('Please enter only English letters', 'Error', {
+        timeOut: 2000,
+      });
+    }
+    // const alphabet = [
+    //   'A',
+    //   'B',
+    //   'C',
+    //   'D',
+    //   'E',
+    //   'F',
+    //   'G',
+    //   'H',
+    //   'I',
+    //   'J',
+    //   'K',
+    //   'L',
+    //   'M',
+    //   'N',
+    //   'O',
+    //   'P',
+    //   'Q',
+    //   'R',
+    //   'S',
+    //   'T',
+    //   'U',
+    //   'V',
+    //   'W',
+    //   'X',
+    //   'Y',
+    //   'Z',
+    //   'a',
+    //   'b',
+    //   'c',
+    //   'd',
+    //   'e',
+    //   'f',
+    //   'g',
+    //   'h',
+    //   'i',
+    //   'j',
+    //   'k',
+    //   'l',
+    //   'm',
+    //   'n',
+    //   'o',
+    //   'p',
+    //   'q',
+    //   'r',
+    //   's',
+    //   't',
+    //   'u',
+    //   'v',
+    //   'w',
+    //   'x',
+    //   'y',
+    //   'z',
+    // ];
+    // const findLetter = alphabet.find((obj) => {
+    //   return console.log(obj != e.key);
+    // });
+    // const regexx = new RegExp("[a-zA-Z]");
+    // console.log(regexx);
+    // console.log(this.customPatterns.A);
+    // console.log(e.key);
+    // if (e.key !==) {
     // }
-    // console.log(this.customPatterns);
-  }
-  showError() {
-    this.toastr.error('Please set your keyboard language to English', 'Error', {
-      timeOut: 2000,
-    });
   }
 
   ngOnInit(): void {}

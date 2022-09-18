@@ -28,10 +28,12 @@
               [patterns]="customPatterns"
               mask="AAAAAAAAAA"
               placeholder="Ex. Mahdi Taremi"
-              #test
-              (keypress)="showError()"
+              type="text"
+              #box
+              (keyup)="showError($event)"
               NgModel
             />
+            <!-- (keyup)="showError(box.value)" -->
             <!-- (keypress)="checkUsername(test.value)" -->
             <!-- (maskFilled)="showError()" -->
           </mat-form-field>
